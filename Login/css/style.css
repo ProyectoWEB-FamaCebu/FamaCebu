@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans");
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
+
+body {
+  min-height: 95vh;
+  /* background-image: url("../img/paisaje.jpg");*/
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-color: #e1e8ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+}
+
+.cont_presentacion {
+  height: 500px;
+  width: 500px;
+  background-color: #d82435;
+  background-image: url("../img/cebu.jpg");
+  position: relative;
+  background-position-x: center;  
+}
+
+.titulo{
+  font-family: 'Squada One', cursive;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 80px;
+}
+
+
+.contenedor {
+  height: 500px;
+  width: 350px;
+  background-color: #ffffff;
+}
+
+.isesion {
+  font-size: 30px;
+  color: #212121;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+}
+
+#avatar {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: auto;
+}
+
+#cont-cajas {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  height: 150px;
+  width: 250px;
+  background-color: #f8d82d;
+  border-radius: 10px;
+}
+
+.caja {
+  margin-top: 30px;
+  margin-left: 20px;
+  display: inline-block;
+  height: 30px;
+  width: 200px;
+  outline: none;
+  border: 0;
+  border-radius: 10px;
+  border-left: 3px solid red;
+  font-family: "Fira Sans";
+  font-size: 16pt;
+  color: blue;
+}
+
+::placeholder {
+  color: #2121218f;
+  font-size: 20px;
+  padding: 7px 2px;
+}
+
+.btn {
+  justify-content: center;
+  margin: 20px auto;
+  display: flex;
+  text-decoration: none;
+  font-size: 20px;
+  color: #333333;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #f8d82d;
+  border-color: #d8d8d8;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 35px;
+}
