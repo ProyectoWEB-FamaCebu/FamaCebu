@@ -1,5 +1,0 @@
-commit 3b778079ae37fba265ae8a69350f26125824c773
-Author: Fernando Diaz M <fer.diaz@udla.edu.co>
-Date:   Tue Oct 1 08:50:20 2019 -0500
-
-    Proyecto base
