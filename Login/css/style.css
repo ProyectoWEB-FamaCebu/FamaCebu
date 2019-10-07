@@ -5,10 +5,10 @@
 
 body {
   min-height: 95vh;
-  /* background-image: url("../img/paisaje.jpg");*/
+  background-image: url("../img/jpg/34.jpg");
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-color: #e1e8ee;
+  /* background-color: #e1e8ee; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,18 +18,20 @@ body {
 .cont_presentacion {
   height: 500px;
   width: 500px;
-  background-color: #d82435;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
   background-image: url("../img/cebu.jpg");
   position: relative;
-  background-position-x: center;  
+  background-position-x: center;
 }
 
-.titulo{
+.titulo {
   font-family: 'Squada One', cursive;
   display: flex;
   justify-content: center;
+  font-size: 70px;
   position: relative;
-  top: 80px;
+  top: 20px;
 }
 
 
@@ -37,6 +39,8 @@ body {
   height: 500px;
   width: 350px;
   background-color: #ffffff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .isesion {
@@ -67,37 +71,44 @@ body {
   margin-top: 30px;
   margin-left: 20px;
   display: inline-block;
-  height: 30px;
+  height: 20px;
   width: 200px;
   outline: none;
-  border: 0;
-  border-radius: 10px;
-  border-left: 3px solid red;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid rgb(128, 128, 128);
   font-family: "Fira Sans";
   font-size: 16pt;
-  color: blue;
+  color: #2121218f;
+}
+
+.caja:focus {
+  border-bottom: 2px solid #ad3c3c8f;
 }
 
 ::placeholder {
   color: #2121218f;
   font-size: 20px;
-  padding: 7px 2px;
 }
 
 .btn {
+  cursor: pointer;
   justify-content: center;
   margin: 20px auto;
   display: flex;
   text-decoration: none;
+  outline: none;
   font-size: 20px;
-  color: #333333;
+  color: black;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 40px;
   padding-right: 40px;
   background-color: #f8d82d;
-  border-color: #d8d8d8;
-  border-width: 3px;
-  border-style: solid;
+  /* border-color: black; */
+  /* border-color: #d8d8d8; */
+  /* border-width: 3px; */
+  /* border-style: solid; */
+  border: none;
   border-radius: 35px;
 }
