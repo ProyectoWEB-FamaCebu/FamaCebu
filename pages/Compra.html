@@ -4,13 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fama el Cebu | Compras</title>
 
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
   <link rel="icon" type="image/png" sizes="32x32" href="../dist/img/favicon/favicon.ico">
 
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -23,6 +22,7 @@
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 
 
@@ -41,9 +41,10 @@
       <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
+          <!-- <a class="nav-link" data-toggle="dropdown" href="" onclick="salir()">
             Cerrar sesion
-          </a>
+          </a> -->
+          <!-- <button class="btn btn-warning" type="button" onclick="salir()">Cerrar Sesion</button> -->
         </li>
       </ul>
     </nav>
@@ -53,8 +54,7 @@
     <aside class="main-sidebar sidebar-dark-red elevation-4">
       <!-- Brand Logo -->
       <a href="../Principal.html" class="brand-link">
-        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
+        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-normal"><strong>Fama el Cebu</strong></span>
       </a>
 
@@ -136,13 +136,6 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Compras</h1>
-            </div>
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
 
@@ -155,28 +148,12 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                <i class="fas fa-edit"></i>
-                Contenidos de las Compras
+                <i class="fas fa-shopping-bag"></i>
+                Contenido de las Compras
               </h3>
             </div>
-            <div class="card-body">
 
-              <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="custom-content-below-home-tab" data-toggle="pill"
-                    href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home"
-                    aria-selected="true">Lista</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill"
-                    href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile"
-                    aria-selected="false">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="custom-content-below-messages-tab" data-toggle="pill" href="#Edicion"
-                    role="tab" aria-controls="custom-content-below-messages" aria-selected="false">Edicion</a>
-                </li>
-              </ul>
+            <div class="card-body">
 
               <div class="tab-content" id="custom-content-below-tabContent">
                 <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel"
@@ -186,12 +163,103 @@
                     <div class="col-12">
                       <div class="card">
                         <div class="card-header">
-                          <h3 class="card-title">Lista de Compras</h3>
+                          <h3 class="card-title"> <i class="fas fa-cart-plus"></i> Agregar Compras </h3>
+                        </div>
+
+                        <div class="card-body">
+                          <div class="row">
+
+                            <div class="col-md-3">
+
+                              <div class="form-group">
+                                <label for="Fecha">Fecha</label>
+                                <input type="" class="form-control" id="fechaActual" disabled>
+                              </div>
+
+                            </div>
+
+
+                            <div class="col-md-3">
+
+                              <div class="form-group">
+                                <label for="Codigo">Codigo</label>
+                                <input type="text" class="form-control" id="Codigo" placeholder="Digite codigo">
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label for="Cantidad">Cantidad</label>
+                                <input type="number" class="form-control" id="Cantidad" onkeyup="Multiplicar()"
+                                  placeholder="Digite cantidad">
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label for="V_Unitario">Valor Unitario</label>
+                                <input type="number" class="form-control" id="V_Unitario" onkeyup="Multiplicar()"
+                                  placeholder="Digite valor unitario">
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label>Valor total</label>
+                                <input type="number" class="form-control" id="V_Total" onkeyup="SeparadorMiles()"
+                                  onchange="SeparadorMiles()" placeholder="Valor total" readonly='readonly'>
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+
+                            <div class="col-md-9">
+
+                              <div class="form-group">
+                                <label for="Descripcion">Descripcion</label>
+                                <input type="text" class="form-control" id="Descripcion"
+                                  placeholder="Digite descripcion">
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-3">
+
+                              <label>Acciones</label>
+
+                              <div class="form-group ">
+
+                                <button class="btn btn-info" type="button" id="boton" onclick="RegistrarCompra()">
+                                  <i class="fas fa-cart-plus"></i> Agregar
+                                </button>
+                                <button class="btn btn-danger" type="button">
+                                  <i class="fas fa-folder-minus"></i> Cancelar
+                                </button>
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+
+                        <div class="card-header">
+                          <h3 class="card-title"> <i class="fas fa-list"></i> Listado de Compras</h3>
 
                           <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
                               <input type="text" name="table_search" class="form-control float-right"
-                                placeholder="Search">
+                                placeholder="Buscar">
 
                               <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -207,46 +275,17 @@
                             <thead>
                               <tr>
                                 <th>#</th>
+                                <th>Fecha</th>
                                 <th>Codigo</th>
                                 <th>Descripcion</th>
                                 <th>Cantidad</th>
                                 <th>Valor Unitario</th>
                                 <th>Valor total</th>
+                                <th>Edicion</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>LF</td>
-                                <td>Lomo Fino</td>
-                                <td>Res</td>
-                                <td>20</td>
-                                <td>kilos</td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>PP</td>
-                                <td>Pechuga</td>
-                                <td>Pollo</td>
-                                <td>43</td>
-                                <td>kilos</td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td>CH</td>
-                                <td>Chorizos</td>
-                                <td>Mixta</td>
-                                <td>200</td>
-                                <td>Unidades</td>
-                              </tr>
-                              <tr>
-                                <td>4</td>
-                                <td>LC</td>
-                                <td>Lomo de Cerdo</td>
-                                <td>Cerdo</td>
-                                <td>50</td>
-                                <td>kilos</td>
-                              </tr>
+                            <tbody id="tabla">
+
                             </tbody>
                           </table>
                         </div>
@@ -256,144 +295,6 @@
                     </div>
                   </div>
 
-                </div>
-
-                <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel"
-                  aria-labelledby="custom-content-below-profile-tab">
-
-
-                  <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title">Agregar Compra</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-6">
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Codigo</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite codigo">
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">cantidad</label>
-                            <input type="number" class="form-control" id="exampleInputEmail1"
-                              placeholder="Digite categoria a la que pertenece el producto">
-                          </div>
-
-
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-6">
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Descripcion</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                              placeholder="Digite descripcion">
-                          </div>
-                          <div class="row">
-                            <div class="col-sm-6">
-
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Valor Unitario</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
-                                  placeholder="Digite valor unitario">
-                              </div>
-
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label>Valor total</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
-                                  placeholder="Valor total">
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                        <!-- /.col -->
-                      </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn-info">Aceptar</button>
-                      <button type="submit" class="btn btn-default float-right">Cancelar</button>
-                    </div>
-                    <!-- /.card-footer -->
-
-
-                  </div>
-                </div>
-
-                <div class="tab-pane fade" id="Edicion" role="tabpanel"
-                  aria-labelledby="custom-content-below-messages-tab">
-                  <div class="card-body table-responsive p-0">
-                    <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>#</th>
-                          <th>Codigo</th>
-                          <th>Descripcion</th>
-                          <th>Cantidad</th>
-                          <th>Valor Unitario</th>
-                          <th>Valor total</th>
-                          <th>Edicion</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>LF</td>
-                          <td>Lomo Fino</td>
-                          <td>Res</td>
-                          <td>20</td>
-                          <td>kilos</td>
-                          <td>
-                            <input type="button" name="Editar" value="Editar" OnClick="">
-                            <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>PP</td>
-                          <td>Pechuga</td>
-                          <td>Pollo</td>
-                          <td>43</td>
-                          <td>kilos</td>
-                          <td>
-                            <input type="button" name="Editar" value="Editar" OnClick="">
-                            <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>CH</td>
-                          <td>Chorizos</td>
-                          <td>Mixta</td>
-                          <td>200</td>
-                          <td>Unidades</td>
-                          <td>
-                            <input type="button" name="Editar" value="Editar" OnClick="">
-                            <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>LC</td>
-                          <td>Lomo de Cerdo</td>
-                          <td>Cerdo</td>
-                          <td>50</td>
-                          <td>kilos</td>
-                          <td>
-                            <input type="button" name="Editar" value="Editar" OnClick="">
-                            <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
                 </div>
 
               </div>
@@ -433,6 +334,15 @@
   <script src="../../dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="../../dist/js/demo.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+  <script src="../modelo/M-Compra.js"></script>
+  <script src="../Controlador/Con-Compra.js"></script>
+
 </body>
 
 </html>

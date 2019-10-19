@@ -1,26 +1,11 @@
-var user = document.getElementById("user");
-var pass = document.getElementById("pass");
-
-// function inicio() {
-//   if (user.value == "admin" && pass.value == "admin") {
-//     console.log("Credenciales validas");
-//     window.location = "Principal.html";
-//   } else {
-//     console.log("Credenciales incorrectas");
-//   }
-// }
-
-var iniciosesion;
-
-function inicio() {
+/* function inicio() {
   if (user.value == "admin" && pass.value == "admin") {
-    iniciosesion = window.open("Principal.html");
+    console.log("Credenciales validas");
+    
+  } else {
+    console.log("Credenciales incorrectas");
   }
-}
-
-function Cerrar() {
-  window.close();
-}
+} */
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -35,21 +20,31 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var db = firebase.firestore();
+var correo = document.getElementById("user");
+var contrasena = document.getElementById("pass");
 
-// Agregando datos
-
-function RegistrarPersona() {
-  db.collection("users")
-    .add({
-      nombre: "Ada",
-      apellido: "Lovelace",
-      edad: 18
-    })
-    .then(function(docRef) {
-      console.log("Documento creado con el ID: ", docRef.id);
+function login() {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(correo.value, contrasena.value)
+    .then(function() {
+      window.location = "Principal.html";
+      console.log("Usuario validado exitosamnte...");
     })
     .catch(function(error) {
-      console.error("Error: ", error);
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode + "::" + errorMessage);
     });
 }
+
+firebase
+  .auth()
+  .createUserWithEmailAndPassword(correo.value, contrasena.value)
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode + ":::" + errorMessage);
+  });
