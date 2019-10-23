@@ -44,7 +44,7 @@
           <!-- <a class="nav-link" data-toggle="dropdown" href="" onclick="salir()">
             Cerrar sesion
           </a> -->
-          <!-- <button class="btn btn-warning" type="button" onclick="salir()">Cerrar Sesion</button> -->
+          <button class="btn btn-warning" data-toggle="dropdown" onclick="salir()">Cerrar Sesion</button>
         </li>
       </ul>
     </nav>
@@ -167,88 +167,91 @@
                         </div>
 
                         <div class="card-body">
-                          <div class="row">
 
-                            <div class="col-md-3">
+                          <form action="" onsubmit="return validarFormulario()"> 
+                            <div class="row">
 
-                              <div class="form-group">
-                                <label for="Fecha">Fecha</label>
-                                <input type="" class="form-control" id="fechaActual" disabled>
+                              <div class="col-md-3">
+
+                                <div class="form-group">
+                                  <label for="Fecha">Fecha</label>
+                                  <input type="" class="form-control" id="fechaActual" disabled>
+                                </div>
+
+                              </div>
+
+
+                              <div class="col-md-3">
+
+                                <div class="form-group">
+                                  <label for="Codigo">Codigo</label>
+                                  <input type="text" class="form-control" id="Codigo" placeholder="Digite codigo">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="Cantidad">Cantidad</label>
+                                  <input type="number" class="form-control" id="Cantidad" onkeyup="Multiplicar()"
+                                    placeholder="Digite cantidad">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="V_Unitario">Valor Unitario</label>
+                                  <input type="number" class="form-control" id="V_Unitario"
+                                    onkeyup="Multiplicar()" placeholder="Digite valor unitario">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label>Valor total</label>
+                                  <input type="number" class="form-control" id="V_Total" placeholder="Valor total"
+                                    readonly='readonly'>
+                                </div>
+
                               </div>
 
                             </div>
 
+                            <div class="row">
 
-                            <div class="col-md-3">
+                              <div class="col-md-9">
 
-                              <div class="form-group">
-                                <label for="Codigo">Codigo</label>
-                                <input type="text" class="form-control" id="Codigo" placeholder="Digite codigo">
+                                <div class="form-group">
+                                  <label for="Descripcion">Descripcion</label>
+                                  <input type="text" class="form-control" id="Descripcion"
+                                    placeholder="Digite descripcion">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-3">
+
+                                <label>Acciones</label>
+
+                                <div class="form-group ">
+
+                                  <button class="btn btn-info" type="button" id="boton" onclick="RegistrarCompra()">
+                                    <i class="fas fa-cart-plus"></i> Agregar
+                                  </button>
+                                  <button class="btn btn-danger" type="button" onclick="">
+                                    <i class="fas fa-folder-minus"></i> Cancelar
+                                  </button>
+                                </div>
+
                               </div>
 
                             </div>
-
-                            <div class="col-md-2">
-
-                              <div class="form-group">
-                                <label for="Cantidad">Cantidad</label>
-                                <input type="number" class="form-control" id="Cantidad" onkeyup="Multiplicar()"
-                                  placeholder="Digite cantidad">
-                              </div>
-
-                            </div>
-
-                            <div class="col-md-2">
-
-                              <div class="form-group">
-                                <label for="V_Unitario">Valor Unitario</label>
-                                <input type="number" class="form-control" id="V_Unitario" onkeyup="Multiplicar()"
-                                  placeholder="Digite valor unitario">
-                              </div>
-
-                            </div>
-
-                            <div class="col-md-2">
-
-                              <div class="form-group">
-                                <label>Valor total</label>
-                                <input type="number" class="form-control" id="V_Total" onkeyup="SeparadorMiles()"
-                                  onchange="SeparadorMiles()" placeholder="Valor total" readonly='readonly'>
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                          <div class="row">
-
-                            <div class="col-md-9">
-
-                              <div class="form-group">
-                                <label for="Descripcion">Descripcion</label>
-                                <input type="text" class="form-control" id="Descripcion"
-                                  placeholder="Digite descripcion">
-                              </div>
-
-                            </div>
-
-                            <div class="col-md-3">
-
-                              <label>Acciones</label>
-
-                              <div class="form-group ">
-
-                                <button class="btn btn-info" type="button" id="boton" onclick="RegistrarCompra()">
-                                  <i class="fas fa-cart-plus"></i> Agregar
-                                </button>
-                                <button class="btn btn-danger" type="button">
-                                  <i class="fas fa-folder-minus"></i> Cancelar
-                                </button>
-                              </div>
-
-                            </div>
-
-                          </div>
+                          </form>
 
                         </div>
 
@@ -271,8 +274,8 @@
 
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                          <table class="table table-hover">
-                            <thead>
+                          <table id="Orden" class="table table-hover table-sm sortable">
+                            <thead class="thead-light">
                               <tr>
                                 <th>#</th>
                                 <th>Fecha</th>
@@ -335,6 +338,9 @@
   <!-- AdminLTE for demo purposes -->
   <script src="../../dist/js/demo.js"></script>
 
+
+
+  <script src="../Librerias/sorttable.js"> </script>
 
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>

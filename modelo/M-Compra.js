@@ -16,21 +16,21 @@ var db = firebase.firestore();
 
 // Agregando datos
 
-var fecha = document.getElementById("fechaActual");
-var codigo = document.getElementById("Codigo");
-var descripcion = document.getElementById("Descripcion");
-var cantidad = document.getElementById("Cantidad");
-var Valor_Unitario = document.getElementById("V_Unitario");
+var fecha = document.getElementById("fechaActual").value;
+var codigo = document.getElementById("Codigo").value;
+var descripcion = document.getElementById("Descripcion").value;
+var cantidad = document.getElementById("Cantidad").value;
+var Valor_Unitario = document.getElementById("V_Unitario").value;
 var V_total = document.getElementById("V_Total");
 
 function RegistrarCompra() {
   db.collection("Compras")
     .add({
-      Fecha: fecha.value,
-      Codigo: codigo.value,
-      Descripcion: descripcion.value,
-      Cantidad: cantidad.value,
-      Valor_Unitario: Valor_Unitario.value,
+      Fecha: fecha,
+      Codigo: codigo,
+      Descripcion: descripcion,
+      Cantidad: cantidad,
+      Valor_Unitario: Valor_Unitario,
       V_total: cantidad.value * Valor_Unitario.value
     })
     .then(function(docRef) {
@@ -48,7 +48,8 @@ var tabla = document.getElementById("tabla");
 db.collection("Compras").onSnapshot(querySnapshot => {
   tabla.innerHTML = "";
   querySnapshot.forEach(doc => {
-    console.log(`${doc.id} => ${doc.data()}`);
+  console.log(`${doc.id} => ${doc.data()}`);
+  
     tabla.innerHTML += `
         <tr>
           <td>${doc.id}</td>
@@ -89,6 +90,8 @@ function eliminar(id) {
     });
 }
 
+// Editar 
+
 function editar(id, codigo, descripcion, cantidad, VUnitario, VTotal) {
   document.getElementById("Codigo").value = codigo;
   document.getElementById("Descripcion").value = descripcion;
@@ -100,7 +103,7 @@ function editar(id, codigo, descripcion, cantidad, VUnitario, VTotal) {
   boton.innerHTML = '<i class="fas fa-pencil-alt"> </i> Editar';
 
   boton.onclick = function() {
-    var washingtonRef = db.collection("Compras").doc(id);
+    var Actualizar = db.collection("Compras").doc(id);
 
     var codigo = document.getElementById("Codigo").value;
     var descripcion = document.getElementById("Descripcion").value;
@@ -108,7 +111,7 @@ function editar(id, codigo, descripcion, cantidad, VUnitario, VTotal) {
     var Valor_Unitario = document.getElementById("V_Unitario").value;
     var total = document.getElementById("V_Total").value;
 
-    return washingtonRef
+    return Actualizar
       .update({
         Codigo: codigo,
         Descripcion: descripcion,
@@ -119,7 +122,6 @@ function editar(id, codigo, descripcion, cantidad, VUnitario, VTotal) {
       .then(function() {
         console.log("Documento actualizado exitosamente!");
         boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
-        alert("Documento actualizado exitosamente!");
         Limpiar();
       })
       .catch(function(error) {
@@ -128,6 +130,7 @@ function editar(id, codigo, descripcion, cantidad, VUnitario, VTotal) {
       });
   };
 }
+
 
 function Limpiar() {
   codigo.value = "";
@@ -149,3 +152,4 @@ function salir() {
       console.log(error);
     });
 }
+

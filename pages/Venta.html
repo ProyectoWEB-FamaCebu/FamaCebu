@@ -41,9 +41,10 @@
       <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
+          <!-- <a class="nav-link" data-toggle="dropdown" href="#">
             Cerrar sesion
-          </a>
+          </a> -->
+          <button class="btn btn-warning" data-toggle="dropdown" onclick="salir()">Cerrar Sesion</button>
         </li>
       </ul>
     </nav>
@@ -53,8 +54,7 @@
     <aside class="main-sidebar sidebar-dark-red elevation-4">
       <!-- Brand Logo -->
       <a href="../Principal.html" class="brand-link">
-        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
+        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-normal"><strong>Fama el Cebu</strong></span>
       </a>
 
@@ -358,7 +358,7 @@
                             </a>
                             <a class="btn btn-danger btn-sm" href="#">
                               <i class="fas fa-trash"></i>
-                            </a> 
+                            </a>
                           </td>
                         </tr>
                         <tr>
@@ -369,8 +369,10 @@
                           <td>43</td>
                           <td>kilos</td>
                           <td>
-                            <button class="btn btn-info btn-sm" type="button" name="Editar" value="Editar" OnClick=""><i class="fas fa-pencil-alt"></i></button>
-                            <button class="btn btn-danger btn-sm" type="button" name="Eliminar" value="Eliminar" OnClick=""><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-info btn-sm" type="button" name="Editar" value="Editar" OnClick=""><i
+                                class="fas fa-pencil-alt"></i></button>
+                            <button class="btn btn-danger btn-sm" type="button" name="Eliminar" value="Eliminar"
+                              OnClick=""><i class="fas fa-trash"></i></button>
                           </td>
                         </tr>
                         <tr>
@@ -438,6 +440,15 @@
   <script src="../../dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="../../dist/js/demo.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+  <script src="../modelo/M-Venta.js"></script>
+  <script src="../Controlador/Con-Venta.js"></script>
+
 </body>
 
 </html>
