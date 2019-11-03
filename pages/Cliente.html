@@ -111,6 +111,13 @@
             </li>
 
             <li class="nav-item">
+                <a href="Usuario.html" class="nav-link">
+                  <i class="nav-icon fas fa-user-check"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
               <a href="Reportes.html" class="nav-link">
                 <i class="nav-icon far fa-chart-bar"></i>
                 <p>Reportes</p>
@@ -138,7 +145,7 @@
             <div class="card-header">
               <h3 class="card-title">
                 <i class="fas fa-users"></i>
-                Clientes
+                Contenido Clientes
               </h3>
             </div>
 
@@ -165,7 +172,7 @@
 
                                 <div class="form-group">
                                   <label for="fecha">Fecha</label>
-                                  <input type="date" class="form-control" id="fecha">
+                                  <input type="" class="form-control" id="fechaActual" disabled> 
                                 </div>
 
                               </div>
@@ -185,7 +192,7 @@
                                 <div class="form-group">
                                   <label for="tipo">Tipo documento</label>
                                   <select class="form-control select2" style="width: 100%;" id="tipo">
-                                    <option selected="selected">CC</option>
+                                    <option>Cc</option>
                                     <option>Nif</option>
                                   </select>
                                 </div>
@@ -197,7 +204,7 @@
                                 <div class="form-group">
                                   <label for="numerodocumento">Numero Documento</label>
                                   <input type="number" class="form-control" id="numerodocumento"
-                                    placeholder="Digite cantidad">
+                                    placeholder="Digite documento">
                                 </div>
 
                               </div>
@@ -289,7 +296,7 @@
                                 <th>#</th>
                                 <th>Fecha</th>
                                 <th>Nombre</th>
-                                <th>Tipo documento</th>
+                                <th>Tipo</th>
                                 <th>Documento</th>
                                 <th>Direccion</th>
                                 <th>Telefono</th>
@@ -350,10 +357,12 @@
 
 
   <script src="../Librerias/sorttable.js"> </script>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+  
 
   <script src="../modelo/M-Cliente.js"></script>
   <script src="../Controlador/Con-Cliente.js"></script>

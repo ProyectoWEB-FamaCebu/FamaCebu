@@ -53,8 +53,7 @@
     <aside class="main-sidebar sidebar-dark-red elevation-4">
       <!-- Brand Logo -->
       <a href="../Principal.html" class="brand-link">
-        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3"
-          style="opacity: .8">
+        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-normal"><strong>Fama el Cebu</strong></span>
       </a>
 
@@ -118,6 +117,13 @@
             </li>
 
             <li class="nav-item">
+                <a href="Usuario.html" class="nav-link">
+                  <i class="nav-icon fas fa-user-check"></i>
+                  <p>Usuarios</p>
+                </a>
+              </li>
+
+            <li class="nav-item">
               <a href="Reportes.html" class="nav-link">
                 <i class="nav-icon far fa-chart-bar"></i>
                 <p>Reportes</p>
@@ -135,13 +141,6 @@
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Proveedores</h1>
-            </div>
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
 
@@ -154,28 +153,13 @@
           <div class="card card-primary card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                <i class="fas fa-edit"></i>
-                Contenido de Proveedores
+                <i class="fas fa-hotel"></i>
+                Contenido Proveedores
               </h3>
             </div>
-            <div class="card-body">
 
-              <ul class="nav nav-tabs" id="custom-content-below-tab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active" id="custom-content-below-home-tab" data-toggle="pill"
-                    href="#custom-content-below-home" role="tab" aria-controls="custom-content-below-home"
-                    aria-selected="true">Lista</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="custom-content-below-profile-tab" data-toggle="pill"
-                    href="#custom-content-below-profile" role="tab" aria-controls="custom-content-below-profile"
-                    aria-selected="false">Agregar</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="custom-content-below-messages-tab" data-toggle="pill" href="#Edicion"
-                    role="tab" aria-controls="custom-content-below-messages" aria-selected="false">Edicion</a>
-                </li>
-              </ul>
+
+            <div class="card-body">
 
               <div class="tab-content" id="custom-content-below-tabContent">
                 <div class="tab-pane fade show active" id="custom-content-below-home" role="tabpanel"
@@ -185,12 +169,127 @@
                     <div class="col-12">
                       <div class="card">
                         <div class="card-header">
-                          <h3 class="card-title">Listado de Proveedores</h3>
+                          <h3 class="card-title"><i class="fas fa-cart-plus"></i> Agregar Proveedor</h3>
+                        </div>
+
+                        <div class="card-body">
+
+                          <form action="" onsubmit="return validarFormulario()">
+                            <div class="row">
+
+
+                              <div class="col-md-3">
+
+                                <div class="form-group">
+                                  <label for="fecha">Fecha</label>
+                                  <input type="" class="form-control" id="fechaActual" disabled>
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-3">
+
+                                <div class="form-group">
+                                  <label for="nombre">Nombre</label>
+                                  <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
+                                </div>
+
+                              </div>
+
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="tipo">Tipo documento</label>
+                                  <select class="form-control select2" style="width: 100%;" id="tipo">
+                                    <option>Cc</option>
+                                    <option>Nif</option>
+                                  </select>
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="numerodocumento">Numero Documento</label>
+                                  <input type="number" class="form-control" id="numerodocumento"
+                                    placeholder="Digite documento">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="direccion">Direccion</label>
+                                  <input type="text" class="form-control" id="direccion" placeholder="Digite direccion">
+                                </div>
+
+                              </div>
+
+
+
+                            </div>
+
+                            <div class="row">
+
+                              <div class="col-md-2">
+
+                                <div class="form-group">
+                                  <label for="telefono">Telefono</label>
+                                  <input type="tel" class="form-control" id="telefono" placeholder="Telefono">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-3">
+
+                                <div class="form-group">
+                                  <label for="correo">Correo Electronico</label>
+                                  <input type="email" class="form-control" id="correo" placeholder="Correo">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-4">
+
+                                <div class="form-group">
+                                  <label for="caracteristicas">Caracteristicas</label>
+                                  <input type="text" class="form-control" id="caracteristicas"
+                                    placeholder="Digite caracteristicas">
+                                </div>
+
+                              </div>
+
+                              <div class="col-md-3">
+
+                                <label>Acciones</label>
+
+                                <div class="form-group ">
+
+                                  <button class="btn btn-info" type="button" id="boton" onclick="RegistrarProveedor()">
+                                    <i class="fas fa-cart-plus"></i> Agregar
+                                  </button>
+                                  <button class="btn btn-danger" type="button" onclick="">
+                                    <i class="fas fa-folder-minus"></i> Cancelar
+                                  </button>
+                                </div>
+
+                              </div>
+
+                            </div>
+                          </form>
+
+                        </div>
+
+                        <div class="card-header">
+                          <h3 class="card-title"> <i class="fas fa-list"></i> Listado de Proveedores</h3>
 
                           <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
                               <input type="text" name="table_search" class="form-control float-right"
-                                placeholder="Search">
+                                placeholder="Buscar">
 
                               <div class="input-group-append">
                                 <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
@@ -200,237 +299,38 @@
 
                         </div>
 
-                        <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
-                          <table class="table table-hover">
-                            <thead>
+                          <table id="Orden" class="table table-hover table-sm sortable">
+                            <thead class="thead-light">
                               <tr>
                                 <th>#</th>
+                                <th> Fecha</th>
                                 <th>Nombre</th>
-                                <th>Tipo Documento</th>
+                                <th>Tipo</th>
                                 <th>Documento</th>
                                 <th>Direccion</th>
-                                <th>Correo Electronico</th>
                                 <th>Telefono</th>
+                                <th>Correo</th>
                                 <th>Caracteristicas</th>
+                                <th>Edicion</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>LF</td>
-                                <td>Lomo Fino</td>
-                                <td>Res</td>
-                                <td>20</td>
-                                <td>kilos</td>
-                                <td>Carne de primera.</td>
-                                <td>klsdjf</td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>PP</td>
-                                <td>Pechuga</td>
-                                <td>Pollo</td>
-                                <td>43</td>
-                                <td>kilos</td>
-                                <td>Pechugas de pollo encuadora.</td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td>CH</td>
-                                <td>Chorizos</td>
-                                <td>Mixta</td>
-                                <td>200</td>
-                                <td>Unidades</td>
-                                <td>Chorizos de res, cerdo y pollo sin condimentos.</td>
-                              </tr>
-                              <tr>
-                                <td>4</td>
-                                <td>LC</td>
-                                <td>Lomo de Cerdo</td>
-                                <td>Cerdo</td>
-                                <td>50</td>
-                                <td>kilos</td>
-                                <td>Lomo de cerdo sin piel preprosesado.</td>
-                              </tr>
+                            <tbody id="tabla">
+
                             </tbody>
                           </table>
                         </div>
-                        <!-- /.card-body -->
+
                       </div>
                       <!-- /.card -->
                     </div>
                   </div>
-
-                </div>
-
-                <div class="tab-pane fade" id="custom-content-below-profile" role="tabpanel"
-                  aria-labelledby="custom-content-below-profile-tab">
-                  <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title">Agregar Proveedores nuevos</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-6">
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Nombre</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Digite Nombre">
-                          </div>
-
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Direccion</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                              placeholder="Digite Direccion">
-                          </div>
-
-                          <div class="form-group">
-                              <label for="exampleInputEmail1">Telefono</label>
-                              <input type="tel" class="form-control" id="exampleInputEmail1"
-                                placeholder="Digite Telefono">
-                            </div>
-
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-6">
-
-                          <div class="row">
-
-                            <div class="col-md-6">
-                              <div class="form-group">
-                                <label>Tipo</label>
-                                <select class="form-control select2" style="width: 100%;">
-                                  <option selected="selected">CC</option>
-                                  <option>Nif</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div class="col-sm-6">
-
-                              <div class="form-group">
-                                <label for="exampleInputEmail1">Numero Documento</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1"
-                                  placeholder="Digite documento">
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                          <div class="form-group">
-                            <label for="exampleInputEmail1">Correo Electronico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                              placeholder="Digite el correo">
-                          </div>
-
-
-                        </div>
-                        <!-- /.col -->
-                      </div>
-                      <div class="form-group">
-                        <label>Caracteristicas</label>
-                        <textarea class="form-control" placeholder="Descripcion del producto... "></textarea>
-                      </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn-info">Aceptar</button>
-                      <button type="submit" class="btn btn-default float-right">Cancelar</button>
-                    </div>
-                    <!-- /.card-footer -->
-
-
-                  </div>
-                </div>
-
-                <div class="tab-pane fade" id="Edicion" role="tabpanel"
-                  aria-labelledby="custom-content-below-messages-tab">
-                  <!-- /.card-header -->
-                  <div class="card-body table-responsive p-0">
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Tipo Documento</th>
-                            <th>Documento</th>
-                            <th>Direccion</th>
-                            <th>Correo Electronico</th>
-                            <th>Telefono</th>
-                            <th>Caracteristicas</th>
-                            <th>Edicion</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>LF</td>
-                            <td>Lomo Fino</td>
-                            <td>Res</td>
-                            <td>20</td>
-                            <td>kilos</td>
-                            <td>Carne de primera.</td>
-                            <td>klsdjf</td>
-                            <th>
-                                <input type="button" name="Editar" value="Editar" OnClick="">
-                                <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>PP</td>
-                            <td>Pechuga</td>
-                            <td>Pollo</td>
-                            <td>43</td>
-                            <td>kilos</td>
-                            <td>Pechugas de pollo encuadora.</td>
-                            <td>klsdjf</td>
-                            <th>
-                                <input type="button" name="Editar" value="Editar" OnClick="">
-                                <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>CH</td>
-                            <td>Chorizos</td>
-                            <td>Mixta</td>
-                            <td>200</td>
-                            <td>Unidades</td>
-                            <td>Chorizos de res, cerdo y pollo sin condimentos.</td>
-                            <td>klsdjf</td>
-                            <th>
-                                <input type="button" name="Editar" value="Editar" OnClick="">
-                                <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                            </th>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>LC</td>
-                            <td>Lomo de Cerdo</td>
-                            <td>Cerdo</td>
-                            <td>50</td>
-                            <td>kilos</td>
-                            <td>Lomo de cerdo sin piel preprosesado.</td>
-                            <td>klsdjf</td>
-                            <th>
-                                <input type="button" name="Editar" value="Editar" OnClick="">
-                                <input type="button" name="Eliminar" value="Eliminar" OnClick="">
-                            </th>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
                 </div>
 
               </div>
-
             </div>
-            <!-- /.card -->
+
+
           </div>
           <!-- /.card -->
         </div>
@@ -464,6 +364,16 @@
   <script src="../../dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="../../dist/js/demo.js"></script>
+
+  <script src="../Librerias/sorttable.js"> </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+  <script src="../modelo/M-Proveedores.js"></script>
+  <script src="../Controlador/Con-Proveedores.js"></script>
 </body>
 
 </html>

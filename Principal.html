@@ -10,7 +10,7 @@
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
   <link rel="icon" type="image/png" sizes="32x32" href="dist/img/favicon/favicon.ico">
 
-  
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -53,9 +53,7 @@
       <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">
-            Cerrar sesion
-          </a>
+            <button class="btn btn-warning" data-toggle="dropdown" onclick="salir()">Cerrar Sesion</button>
         </li>
       </ul>
     </nav>
@@ -126,6 +124,13 @@
               <a href="pages/Proveedores.html" class="nav-link">
                 <i class="nav-icon fas fa-hotel"></i>
                 <p>Proveedores</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="Usuario.html" class="nav-link">
+                <i class="nav-icon fas fa-user-check"></i>
+                <p>Usuarios</p>
               </a>
             </li>
 
@@ -257,6 +262,22 @@
 
             <!-- ./col -->
             <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div onclick="location.href='pages/Usuario.html'" class="small-box bg-info">
+                  <div class="inner">
+                    <h4>Usuarios</h4>
+  
+                    <p></p>
+                  </div>
+                  <div class="icon">
+                    <i class="fas fa-user-check"></i>
+                  </div>
+                  <a class="small-box-footer"> <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
               <!-- small box -->
               <div onclick="location.href='pages/Reportes.html'" class="small-box bg-info">
                 <div class="inner">
@@ -331,6 +352,16 @@
   <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+
+
+  <script src="modelo/M-Principal.js"></script>
+
+
 </body>
 
 </html>

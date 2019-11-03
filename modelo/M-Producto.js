@@ -68,15 +68,31 @@ db.collection("Producto").onSnapshot(querySnapshot => {
 // Borrar documentos
 
 function eliminar(id) {
-  db.collection("Producto")
-    .doc(id)
-    .delete()
-    .then(function() {
-      console.log("Document successfully deleted!");
-    })
-    .catch(function(error) {
-      console.error("Error removing document: ", error);
-    });
+  swal({
+    title: "¿Estás seguro?",
+    text: "Una vez eliminado, ¡no podrá recuperar este archivo!",
+    icon: "warning",
+    buttons: [ " Cancelar " , " Ok! " ],
+    dangerMode: true
+  }).then(willDelete => {
+    if (willDelete) {
+      db.collection("Producto")
+        .doc(id)
+        .delete()
+        .then(function() {
+          console.log("Document successfully deleted!");
+        })
+        .catch(function(error) {
+          console.error("Error removing document: ", error);
+        });
+
+      swal("¡Su archivo ha sido eliminado!", {
+        icon: "success"
+      });
+    } else {
+      swal("¡Tu archivo está a salvo!");
+    }
+  });
 }
 
 // Editar
@@ -109,8 +125,11 @@ function editar(id, codigo, nombre, categoria, unidad, caracteristicas) {
     })
       .then(function() {
         console.log("Documento actualizado exitosamente!");
-        boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
         Limpiar();
+        boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
+        boton.onclick = function() {
+          RegistrarProducto();
+        };
       })
       .catch(function(error) {
         // The document probably doesn't exist.

@@ -40,10 +40,10 @@ function RegistrarVenta() {
     });
 }
 
-// Leer Producto, pintarlas en la tabla {
+// Leer Producto, pintarlas en la tabla 
   var tabla = document.getElementById("tabla");
 
-  db.collection("Venta").onSnapshot(querySnapshot => {
+db.collection("Venta").onSnapshot(querySnapshot => {
     tabla.innerHTML = "";
     querySnapshot.forEach(doc => {
       console.log(`${doc.id} => ${doc.data()}`);
@@ -64,21 +64,39 @@ function RegistrarVenta() {
           </tr>
           `;
     });
-  });
+});
 
-  function eliminar(id) {
-    db.collection("Venta")
-      .doc(id)
-      .delete()
-      .then(function() {
-        console.log("Document successfully deleted!");
-      })
-      .catch(function(error) {
-        console.error("Error removing document: ", error);
+
+function eliminar(id) {
+  swal({
+    title: "¿Estás seguro?",
+    text: "Una vez eliminado, ¡no podrá recuperar este archivo!",
+    icon: "warning",
+    buttons: [ " Cancelar " , " Ok! " ],
+    dangerMode: true
+  }).then(willDelete => {
+    if (willDelete) {
+      db.collection("Venta")
+        .doc(id)
+        .delete()
+        .then(function() {
+          console.log("Document successfully deleted!");
+        })
+        .catch(function(error) {
+          console.error("Error removing document: ", error);
+        });
+
+      swal("¡Su archivo ha sido eliminado!", {
+        icon: "success"
       });
-  }
+    } else {
+      swal("¡Tu archivo está a salvo!");
+    }
+  });
+}
 
-  function editar(id, Fecha, Codigo, Cantidad, V_Unitario, V_Total, Descripcion) {
+
+function editar(id, Fecha, Codigo, Cantidad, V_Unitario, V_Total, Descripcion) {
     document.getElementById("fechaActual").value = Fecha;
     document.getElementById("codigo").value = Codigo;
     document.getElementById("cantidad").value = Cantidad;
@@ -109,8 +127,11 @@ function RegistrarVenta() {
       })
         .then(function() {
           console.log("Documento actualizado exitosamente!");
-          boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
           Limpiar();
+          boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
+          boton.onclick = function() {
+            RegistrarVenta();
+          };
         })
         .catch(function(error) {
           // The document probably doesn't exist.
@@ -120,14 +141,13 @@ function RegistrarVenta() {
   }
 
 
-  function Limpiar() {
-    Codigo.value = "", 
-    Cantidad.value = "", 
-    V_Unitario.value = "", 
-    V_Total.value = "", 
-    Descripcion.value = "";
-  }
-
+function Limpiar() {
+  Codigo.value = "",
+  Cantidad.value = "",
+  V_Unitario.value = "",
+  V_Total.value = "",
+  Descripcion.value = "";
+}
 
 function salir() {
   firebase

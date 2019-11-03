@@ -2,29 +2,27 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fama el Cebu | Compras</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fama el Cebu | Clientes</title>
 
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
   <link rel="icon" type="image/png" sizes="32x32" href="../dist/img/favicon/favicon.ico">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css" />
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
   <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="../../plugins/sweetalert2/sweetalert2.min.css">
+  <link rel="stylesheet" href="../../plugins/sweetalert2/sweetalert2.min.css" />
   <!-- Toastr -->
-  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css" />
   <!-- Theme style -->
-  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
 </head>
-
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -51,13 +49,12 @@
     <aside class="main-sidebar sidebar-dark-red elevation-4">
       <!-- Brand Logo -->
       <a href="../Principal.html" class="brand-link">
-        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="../dist/img/logocebu.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8" />
         <span class="brand-text font-weight-normal"><strong>Fama el Cebu</strong></span>
       </a>
 
       <!-- Sidebar -->
       <div class="sidebar">
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -85,9 +82,8 @@
               </a>
             </li>
 
-
             <li class="nav-item">
-              <a href="Compra.html" class="nav-link active">
+              <a href="Compra.html" class="nav-link ">
                 <i class="nav-icon fas fa-shopping-bag"></i>
                 <p>Compras</p>
               </a>
@@ -107,7 +103,6 @@
               </a>
             </li>
 
-
             <li class="nav-item">
               <a href="Proveedores.html" class="nav-link">
                 <i class="nav-icon fas fa-hotel"></i>
@@ -116,7 +111,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="Usuario.html" class="nav-link">
+              <a href="Usuario.html" class="nav-link active">
                 <i class="nav-icon fas fa-user-check"></i>
                 <p>Usuarios</p>
               </a>
@@ -128,7 +123,6 @@
                 <p>Reportes</p>
               </a>
             </li>
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -143,17 +137,15 @@
       </div>
       <!-- /.content-header -->
 
-
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-
           <!-- /.card -->
           <div class="card card-primary card-outline">
             <div class="card-header">
               <h3 class="card-title">
-                <i class="fas fa-shopping-bag"></i>
-                Contenido de las Compras
+                <i class="fas fa-users"></i>
+                Contenido Usuarios
               </h3>
             </div>
 
@@ -166,102 +158,107 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="card">
-                        <div class="card-header">
-                          <h3 class="card-title"> <i class="fas fa-cart-plus"></i> Agregar Compras </h3>
-                        </div>
+
 
                         <div class="card-body">
 
-                          <form action="" onsubmit="return validarFormulario()">
-                            <div class="row">
+                          <div style="text-align : center;">
+                            <label>
+                              <h4> <strong> Registro de usuarios para ingresar al sistema</strong></h4>
+                            </label>
+                          </div>
 
-                              <div class="col-md-3">
-
-                                <div class="form-group">
-                                  <label for="Fecha">Fecha</label>
-                                  <input type="" class="form-control" id="fechaActual" disabled>
-                                </div>
-
-                              </div>
+                          <div class="row">
 
 
-                              <div class="col-md-3">
+                            <div class="col-md-3">
 
-                                <div class="form-group">
-                                  <label for="Codigo">Codigo</label>
-                                  <input type="text" class="form-control" id="Codigo" placeholder="Digite codigo">
-                                </div>
-
-                              </div>
-
-                              <div class="col-md-2">
-
-                                <div class="form-group">
-                                  <label for="Cantidad">Cantidad</label>
-                                  <input type="number" class="form-control" id="Cantidad" onkeyup="Multiplicar()"
-                                    placeholder="Digite cantidad">
-                                </div>
-
-                              </div>
-
-                              <div class="col-md-2">
-
-                                <div class="form-group">
-                                  <label for="V_Unitario">Valor Unitario</label>
-                                  <input type="number" class="form-control" id="V_Unitario" onkeyup="Multiplicar()"
-                                    placeholder="Digite valor unitario">
-                                </div>
-
-                              </div>
-
-                              <div class="col-md-2">
-
-                                <div class="form-group">
-                                  <label>Valor total</label>
-                                  <input type="number" class="form-control" id="V_Total" placeholder="Valor total"
-                                    readonly='readonly'>
-                                </div>
-
+                              <div class="form-group">
+                                <label for="fecha">Fecha</label>
+                                <input type="" class="form-control" id="fechaActual" disabled>
                               </div>
 
                             </div>
 
-                            <div class="row">
+                            <div class="col-md-3">
 
-                              <div class="col-md-9">
-
-                                <div class="form-group">
-                                  <label for="Descripcion">Descripcion</label>
-                                  <input type="text" class="form-control" id="Descripcion"
-                                    placeholder="Digite descripcion">
-                                </div>
-
-                              </div>
-
-                              <div class="col-md-3">
-
-                                <label>Acciones</label>
-
-                                <div class="form-group ">
-
-                                  <button class="btn btn-info" type="button" id="boton" onclick="RegistrarCompra()">
-                                    <i class="fas fa-cart-plus"></i> Agregar
-                                  </button>
-                                  <button class="btn btn-danger" type="button" onclick="">
-                                    <i class="fas fa-folder-minus"></i> Cancelar
-                                  </button>
-                                </div>
-
+                              <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Nombre completo">
                               </div>
 
                             </div>
-                          </form>
+
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label for="tipo">Tipo documento</label>
+                                <select class="form-control select2" style="width: 100%;" id="tipo">
+                                  <option>Cc</option>
+                                  <option>Nif</option>
+                                </select>
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label for="numerodocumento">Numero Documento</label>
+                                <input type="number" class="form-control" id="numerodocumento"
+                                  placeholder="Digite documento">
+                              </div>
+
+                            </div>
+
+                            <div class="col-md-2">
+
+                              <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="tel" class="form-control" id="telefono" placeholder="Telefono">
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                          <div class="row">
+                            <div class="col-12">
+
+                              <div class="row p-3 border border-warning rounded">
+
+
+                                <div class="col-md-6">
+                                  <label for="email">Dirección de correo</label>
+                                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                    placeholder="correo@mail.com">
+                                  <small id="emailHelp" class="form-text text-muted">Ingrese un correo real, debido a
+                                    que se envia un correo de notificación</small>
+                                </div>
+                                <div class="col-md-6">
+
+                                  <label for="contrasena">Contraseña</label>
+                                  <input type="password" class="form-control" id="contrasena"
+                                    placeholder="Ingrese su contraseña" value="">
+                                </div>
+
+                              </div>
+
+                              <p>
+                                <div style="text-align : center;">
+                                  <button type="button" class="btn btn-warning" id="boton"
+                                    onclick="CrearUsuario(), RegistrarUsuario()">Registrar</button>
+                                </div>
+                              </p>
+
+                            </div>
+                          </div>
 
                         </div>
 
-
                         <div class="card-header">
-                          <h3 class="card-title"> <i class="fas fa-list"></i> Listado de Compras</h3>
+                          <h3 class="card-title"> <i class="fas fa-list"></i> Listado de Usuarios</h3>
 
                           <div class="card-tools">
                             <div class="input-group input-group-sm" style="width: 150px;">
@@ -276,18 +273,17 @@
 
                         </div>
 
-                        <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                           <table id="Orden" class="table table-hover table-sm sortable">
                             <thead class="thead-light">
                               <tr>
                                 <th>#</th>
                                 <th>Fecha</th>
-                                <th>Codigo</th>
-                                <th>Cantidad</th>
-                                <th>Valor Unitario</th>
-                                <th>Valor total</th>
-                                <th>Descripcion</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Identificacion</th>
+                                <th>Telefono</th>
+                                <th>Usuario</th>
                                 <th>Edicion</th>
                               </tr>
                             </thead>
@@ -297,18 +293,14 @@
                           </table>
                         </div>
 
-                        <!-- /.card-body -->
                       </div>
                       <!-- /.card -->
                     </div>
                   </div>
-
                 </div>
 
               </div>
-
             </div>
-
             <!-- /.card -->
           </div>
           <!-- /.card -->
@@ -323,8 +315,9 @@
       <div class="float-right d-none d-sm-block">
         <b>Version</b> 3.0.0-rc.1
       </div>
-      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-      reserved.
+      <strong>Copyright &copy; 2014-2019
+        <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+      All rights reserved.
     </footer>
 
     <!-- Control Sidebar -->
@@ -345,18 +338,16 @@
   <script src="../../dist/js/demo.js"></script>
 
 
-
   <script src="../Librerias/sorttable.js"> </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
 
-  <script src="../modelo/M-Compra.js"></script>
-  <script src="../Controlador/Con-Compra.js"></script>
 
+  <script src="../modelo/M-Usuario.js"></script>
+  <script src="../Controlador/Con-Usuario.js"></script>
 </body>
 
 </html>

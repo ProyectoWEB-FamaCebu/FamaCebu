@@ -25,8 +25,8 @@ var telefono = document.getElementById("telefono");
 var correo = document.getElementById("correo");
 var caracteristicas = document.getElementById("caracteristicas");
 
-function RegistrarCliente() {
-  db.collection("Cliente")
+function RegistrarProveedor() {
+  db.collection("Proveedor")
     .add({
       Fecha: fecha.value,
       Nombre: nombre.value,
@@ -49,7 +49,7 @@ function RegistrarCliente() {
 // Leer Compras, pintarlas en la tabla 
 var tabla = document.getElementById("tabla");
 
-db.collection("Cliente").onSnapshot(querySnapshot => {
+db.collection("Proveedor").onSnapshot(querySnapshot => {
   tabla.innerHTML = "";
   var i=1;
   querySnapshot.forEach(doc => {
@@ -67,7 +67,7 @@ db.collection("Cliente").onSnapshot(querySnapshot => {
           <td>${doc.data().Correo}</td>
           <td>${doc.data().Caracteristicas}</td>
           <td> 
-              <button class="btn btn-warning btn-sm" onclick="Editar('${ doc.id}', '${doc.data().Nombre}', '${doc.data().Tipo}', '${doc.data().Numerodocumento}', '${doc.data().Direccion}', '${doc.data().Telefono}', '${doc.data().Correo}', '${doc.data().Caracteristicas}' )"> <i class="fas fa-pencil-alt"> </i> </button>
+              <button class="btn btn-warning btn-sm" onclick="Editar('${ doc.id}', '${doc.data().Nombre}', '${doc.data().Tipo}', '${doc.data().Numerodocumento}', '${doc.data().Direccion}', '${doc.data().Telefono}', '${doc.data().Correo}', '${doc.data().Caracteristicas}')"> <i class="fas fa-pencil-alt"> </i> </button>
               <button class="btn btn-danger btn-sm" onclick="eliminar('${doc.id}')"> <i class="fas fa-trash"> </i> </button> 
           </td>
         </tr>
@@ -87,7 +87,7 @@ function eliminar(id) {
     dangerMode: true
   }).then(willDelete => {
     if (willDelete) {
-      db.collection("Cliente")
+      db.collection("Proveedor")
         .doc(id)
         .delete()
         .then(function() {
@@ -121,7 +121,7 @@ function Editar(id, nombre, tipo, numerodocumento, direccion, telefono, correo, 
   boton.innerHTML = '<i class="fas fa-pencil-alt"> </i> Actualizar';
 
   boton.onclick = function() {
-    var Actualizar = db.collection("Cliente").doc(id);
+    var Actualizar = db.collection("Proveedor").doc(id);
 
     var nombre = document.getElementById("nombre").value;
     var tipo = document.getElementById("tipo").value;
@@ -142,10 +142,13 @@ function Editar(id, nombre, tipo, numerodocumento, direccion, telefono, correo, 
     })
       .then(function() {
         console.log("Documento actualizado exitosamente!");
+        swal("¡Su archivo ha sido Actualizado exitosamente!", {
+          icon: "success"
+        });
         Limpiar();
         boton.innerHTML = '<i class="fas fa-cart-plus"></i> Agregar';
         boton.onclick = function() {
-          RegistrarCliente();
+          RegistrarProveedor();
         };
       })
       .catch(function(error) {
@@ -156,13 +159,13 @@ function Editar(id, nombre, tipo, numerodocumento, direccion, telefono, correo, 
 }
 
 function Limpiar() {
-  nombre.value = '';
-  tipo.value = '';
-  numerodocumento.value = '';
-  direccion.value = '';
-  telefono.value = '';
-  correo.value = '';
-  caracteristicas.value = '';
+  nombre.value = "";
+  tipo.value = "";
+  numerodocumento.value = "";
+  direccion.value = "";
+  telefono.value = "";
+  correo.value = "";
+  caracteristicas.value = "";
 }
 
 function salir() {
