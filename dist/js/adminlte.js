@@ -1,13 +1,13 @@
 /*!
  * AdminLTE v3.0.0-rc.1 (https://adminlte.io)
- * Copyright 2014-2019 Colorlib <http://colorlib.com>
+ * Copyright 2014-2020 Colorlib <http://colorlib.com>
  * Licensed under MIT (https://github.com/almasaeed2010/AdminLTE/blob/master/LICENSE)
  */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
   (global = global || self, factory(global.adminlte = {}));
-}(this, function (exports) { 'use strict';
+}(this, (function (exports) { 'use strict';
 
   /**
    * --------------------------------------------
@@ -52,6 +52,10 @@
       FOOTER_LG_FIXED: 'layout-lg-footer-fixed',
       FOOTER_XL_FIXED: 'layout-xl-footer-fixed'
     };
+    /**
+     * Class Definition
+     * ====================================================
+     */
 
     var ControlSidebar =
     /*#__PURE__*/
@@ -307,12 +311,11 @@
     var Default = {
       scrollbarTheme: 'os-theme-light',
       scrollbarAutoHide: 'l'
-      /**
-       * Class Definition
-       * ====================================================
-       */
-
     };
+    /**
+     * Class Definition
+     * ====================================================
+     */
 
     var Layout =
     /*#__PURE__*/
@@ -476,12 +479,11 @@
       COLLAPSED: 'sidebar-collapse',
       OPEN: 'sidebar-open',
       SIDEBAR_MINI: 'sidebar-mini'
-      /**
-       * Class Definition
-       * ====================================================
-       */
-
     };
+    /**
+     * Class Definition
+     * ====================================================
+     */
 
     var PushMenu =
     /*#__PURE__*/
@@ -685,12 +687,11 @@
       trigger: Selector.DATA_WIDGET + " " + Selector.LINK,
       animationSpeed: 300,
       accordion: true
-      /**
-       * Class Definition
-       * ====================================================
-       */
-
     };
+    /**
+     * Class Definition
+     * ====================================================
+     */
 
     var Treeview =
     /*#__PURE__*/
@@ -926,12 +927,11 @@
       onUnCheck: function onUnCheck(item) {
         return item;
       }
-      /**
-       * Class Definition
-       * ====================================================
-       */
-
     };
+    /**
+     * Class Definition
+     * ====================================================
+     */
 
     var TodoList =
     /*#__PURE__*/
@@ -1536,5 +1536,5 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-}));
+})));
 //# sourceMappingURL=adminlte.js.map
