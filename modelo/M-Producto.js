@@ -16,7 +16,6 @@ var db = firebase.firestore();
 
 // Agregando datos
 
-var Codigo = document.getElementById("codigo");
 var Categoria = document.getElementById("categoria");
 var Nombre = document.getElementById("nombre");
 var Unidad = document.getElementById("unidad");
@@ -25,7 +24,6 @@ var Caracteristicas = document.getElementById("caracteristicas");
 function RegistrarProducto() {
   db.collection("Producto")
     .add({
-      Codigo: Codigo.value,
       Categoria: Categoria.value,
       Nombre: Nombre.value,
       Unidad: Unidad.value,
@@ -51,13 +49,12 @@ db.collection("Producto").onSnapshot(querySnapshot => {
     tabla.innerHTML += `
         <tr>
           <td>${doc.id}</td>
-          <td>${doc.data().Codigo}</td>
           <td>${doc.data().Nombre}</td>
           <td>${doc.data().Categoria}</td>
           <td>${doc.data().Unidad}</td>
           <td>${doc.data().Caracteristicas}</td>
           <td> 
-              <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().Codigo}', '${doc.data().Nombre}', '${doc.data().Categoria}', '${doc.data().Unidad}', '${doc.data().Caracteristicas}')"> <i class="fas fa-pencil-alt"> </i> </button>
+              <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().Nombre}', '${doc.data().Categoria}', '${doc.data().Unidad}', '${doc.data().Caracteristicas}')"> <i class="fas fa-pencil-alt"> </i> </button>
               <button class="btn btn-danger btn-sm" onclick="eliminar('${doc.id}')"> <i class="fas fa-trash"> </i> </button> 
           </td>
         </tr>
@@ -97,8 +94,7 @@ function eliminar(id) {
 
 // Editar
 
-function editar(id, codigo, nombre, categoria, unidad, caracteristicas) {
-  document.getElementById("codigo").value = codigo;
+function editar(id, nombre, categoria, unidad, caracteristicas) {
   document.getElementById("nombre").value = nombre;
   document.getElementById("categoria").value = categoria;
   document.getElementById("unidad").value = unidad;
@@ -110,14 +106,12 @@ function editar(id, codigo, nombre, categoria, unidad, caracteristicas) {
   boton.onclick = function() {
     var Actualizar = db.collection("Producto").doc(id);
 
-    var codigo = document.getElementById("codigo").value;
     var nombre = document.getElementById("nombre").value;
     var categoria = document.getElementById("categoria").value;
     var unidad = document.getElementById("unidad").value;
     var caracteristicas = document.getElementById("caracteristicas").value;
 
     return Actualizar.update({
-      Codigo: codigo,
       Nombre: nombre,
       Categoria: categoria,
       Unidad: unidad,
@@ -139,7 +133,6 @@ function editar(id, codigo, nombre, categoria, unidad, caracteristicas) {
 }
 
 function Limpiar() {
-  Codigo.value = "";
   Nombre.value = "";
   Categoria.value = "";
   Unidad.value = "";
