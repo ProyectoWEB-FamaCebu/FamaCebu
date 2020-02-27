@@ -8,13 +8,13 @@ let Caracteristicas = document.getElementById("caracteristicas");
 
 // Your web app's Firebase configuration
 let firebaseConfig = {
-  apiKey: "AIzaSyDLsFQ5raJxVMwScErCpQrThc1G6c-bT-U",
-  authDomain: "v2famacebu.firebaseapp.com",
-  databaseURL: "https://v2famacebu.firebaseio.com",
-  projectId: "v2famacebu",
-  storageBucket: "v2famacebu.appspot.com",
-  messagingSenderId: "1024538402660",
-  appId: "1:1024538402660:web:30c63948e4ffe60c7ca471"
+  apiKey: "AIzaSyCyc3Y0EaKj2BEK1QcDi3LEOTTFs7nQf-c",
+  authDomain: "carniceriafamacebu.firebaseapp.com",
+  databaseURL: "https://carniceriafamacebu.firebaseio.com",
+  projectId: "carniceriafamacebu",
+  storageBucket: "carniceriafamacebu.appspot.com",
+  messagingSenderId: "236108978253",
+  appId: "1:236108978253:web:f248ff53931c2667572404"
 };
 
 // El método componentDidMout() se ejecuta cuando la página haya cargado completamente
@@ -101,7 +101,7 @@ db.collection("Producto").onSnapshot(querySnapshot => {
           <td>${doc.data().Categoria}</td>
           <td>${doc.data().Unidad}</td>
           <td>${doc.data().Caracteristicas}</td>
-          <td>${doc.data().precio}</td>
+          <td>${doc.data().Precio}</td>
           <td> 
               <button class="btn btn-warning btn-sm" onclick="editar('${doc.id}', '${doc.data().Nombre}', '${doc.data().Categoria}', '${doc.data().Unidad}', '${doc.data().Caracteristicas}')"> <i class="fas fa-pencil-alt"> </i> </button>
               <button class="btn btn-danger btn-sm" onclick="eliminar('${doc.id}')"> <i class="fas fa-trash"> </i> </button> 

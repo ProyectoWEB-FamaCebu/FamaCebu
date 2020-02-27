@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fama el Cebu | Ventas</title>
+  <title>Fama el Cebu | Pedidos</title>
 
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> -->
   <link rel="icon" type="image/png" sizes="32x32" href="../dist/img/favicon/favicon.ico">
@@ -115,11 +115,11 @@
             </li>
 
             <li class="nav-item">
-                <a href="Usuario.html" class="nav-link">
-                  <i class="nav-icon fas fa-user-check"></i>
-                  <p>Usuarios</p>
-                </a>
-              </li>
+              <a href="Usuario.html" class="nav-link">
+                <i class="nav-icon fas fa-user-check"></i>
+                <p>Usuarios</p>
+              </a>
+            </li>
 
           </ul>
         </nav>
@@ -178,7 +178,8 @@
 
                               <div class="form-group">
                                 <label for="codigo">Codigo</label>
-                                <input type="text" class="form-control" id="codigo" placeholder="Digite codigo">
+                                <input type="number" class="form-control" id="codigo" placeholder="Digite codigo"
+                                  required>
                               </div>
 
                             </div>
@@ -187,7 +188,8 @@
 
                               <div class="form-group">
                                 <label for="cantidad">cantidad</label>
-                                <input type="number" class="form-control" id="cantidad" placeholder="Digite cantidad">
+                                <input type="number" class="form-control" id="cantidad" placeholder="Digite cantidad"
+                                  required>
                               </div>
 
                             </div>
@@ -197,7 +199,7 @@
                               <div class="form-group">
                                 <label for="V_Unitario">Valor Unitario</label>
                                 <input type="number" class="form-control" id="V_Unitario"
-                                  placeholder="Digite valor unitario">
+                                  placeholder="Digite valor unitario" required>
                               </div>
 
                             </div>
@@ -206,7 +208,8 @@
 
                               <div class="form-group">
                                 <label for="V_Total">Valor total</label>
-                                <input type="number" class="form-control" id="V_Total" placeholder="Valor total">
+                                <input type="number" class="form-control" id="V_Total" placeholder="Valor total"
+                                  required disabled>
                               </div>
 
                             </div>
@@ -218,7 +221,7 @@
                             <div class="col-md-9">
                               <div class="form-group">
                                 <label for="descripcion">Descripcion</label>
-                                <textarea class="form-control" id="descripcion" placeholder="Descripcion "></textarea>
+                                <textarea class="form-control" id="descripcion" placeholder="Descripcion " required></textarea>
                               </div>
                             </div>
 
@@ -323,7 +326,7 @@
 
   <script src="../Librerias/sorttable.js"> </script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
- 
+
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
